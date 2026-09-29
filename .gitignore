@@ -1,0 +1,15 @@
+private/
+
+# Synced CRM data, reports, and workspaces: real customer data
+data/
+
+# Keys
+.env
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+build/
+dist/

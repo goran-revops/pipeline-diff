@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipeline-diff"
+version = "0.1.0"
+description = "Open-source pipeline change tracker for HubSpot and Salesforce: a pipeline waterfall dashboard and files AI agents can read."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "goran-revops" }]
+keywords = ["hubspot", "salesforce", "crm", "sales pipeline", "pipeline analytics", "pipeline waterfall", "revenue intelligence", "revops", "sales forecasting", "deal tracking", "clari alternative", "streamlit", "dashboard", "ai agents"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "httpx>=0.28",
+    "simple-salesforce>=1.12.10",
+    "streamlit>=1.64",
+    "plotly>=7",
+    "tzdata",
+]
+
+[project.urls]
+Homepage = "https://github.com/goran-revops/pipeline-diff"
+Issues = "https://github.com/goran-revops/pipeline-diff/issues"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.scripts]
+pipeline-diff = "pipeline_diff.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["pipeline_diff*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["live: needs real CRM test-account credentials"]
