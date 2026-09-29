@@ -44,7 +44,7 @@ You choose what to compare: since the previous sync, the last 7 or 30 days, quar
 ## Try it without a CRM
 
 ```bash
-pip install git+https://github.com/goran-revops/pipeline-diff
+pip install pipeline-diff
 pipeline-diff demo
 pipeline-diff dashboard
 ```
